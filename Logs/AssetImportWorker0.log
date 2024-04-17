@@ -2719,3 +2719,27 @@ AssetImportParameters requested are different than current active one (requested
   custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1539.684616 seconds.
+  path: Assets/Graphics/Materials
+  artifactKey: Guid(6ca86b7b7c39a094fb9522a289a86d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Materials using Guid(6ca86b7b7c39a094fb9522a289a86d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08823310075bae5ac97206ed50f45d05') in 0.002670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.979206 seconds.
+  path: Assets/Graphics/Materials/Glass.mat
+  artifactKey: Guid(a5448ef96d732b74bb06e855357cb748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Materials/Glass.mat using Guid(a5448ef96d732b74bb06e855357cb748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa6455b5774cfa69eec8ddb8259f2554') in 0.455384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 66
+========================================================================
+Received Import Request.
+  Time since last request: 329.526394 seconds.
+  path: Assets/Graphics/Materials/Glass.mat
+  artifactKey: Guid(a5448ef96d732b74bb06e855357cb748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Materials/Glass.mat using Guid(a5448ef96d732b74bb06e855357cb748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66e96568af0ce834d42ef0bd280816f') in 1.247144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
