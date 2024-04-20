@@ -66,10 +66,19 @@
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Flashlight.cs" />
+    <Compile Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Scripts\CTI_URP_CustomWind.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\TerrainSampleAssets\ThirdPartyNotices.txt" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG Lighting.hlsl" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG BillboardVertex.hlsl" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG BillboardVertexSimple.hlsl" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG Utils.hlsl" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG BillboardFragment.hlsl" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Known Issues.txt" />
+    <None Include="Assets\Forst\Conifers [BOTD]\Render Pipeline Support\URP\Known Issues.txt" />
+    <None Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Shaders\Includes\CTI URP SG Wind.hlsl" />
     <None Include="Assets\Packages\TerrainSampleAssets\ShaderGraphs\CustomFunctions\CustomLighting.hlsl" />
   </ItemGroup>
   <ItemGroup>

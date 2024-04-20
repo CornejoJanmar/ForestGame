@@ -20688,7 +20688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &640505254
 Transform:
   m_ObjectHideFlags: 0
@@ -24159,7 +24159,7 @@ Transform:
   m_GameObject: {fileID: 2048685225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.59, y: 24.44, z: 191.35}
+  m_LocalPosition: {x: 429.303, y: 50.617, z: 80.575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24186,7 +24186,6 @@ MonoBehaviour:
   canBreath: 0
   useFootsteps: 1
   useStamina: 0
-  useOxygen: 0
   sprintKey: 304
   jumpKey: 32
   crouchKey: 99
@@ -24212,12 +24211,6 @@ MonoBehaviour:
   staminaRegenValue: 2
   staminaRegenTime: 0.1
   currentStamina: 0
-  maxOxygen: 100
-  oxygenDrain: 5
-  timeBeforeOxygenStart: 5
-  oxygenRegenValue: 2
-  oxygenRegenTime: 0.1
-  currentOxygen: 0
   walkBobSpeed: 14
   walkBobAmount: 0.05
   SprintBobSpeed: 18

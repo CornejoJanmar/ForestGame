@@ -8,7 +8,6 @@ public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; set; } = true;
     public bool IsSprinting => canSprint && Input.GetKey(sprintKey);
-    public bool IsBreathing => canBreath && Input.GetKey(holdBreath);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && CharacCtrl.isGrounded;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !inCrouchAnim && CharacCtrl.isGrounded;
 
@@ -22,7 +21,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool canBreath = true;
     [SerializeField] private bool useFootsteps = true;
     [SerializeField] private bool useStamina = true;
-    [SerializeField] private bool useOxygen = true;
 
 
     [Header("Controls")]
@@ -71,17 +69,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float staminaRegenTime = 0.1f;
     [SerializeField] private float currentStamina;
     private Coroutine regeneratingStamina;
-
-
-    [Header("HoldBreath")]
-    [SerializeField] private float maxOxygen = 100;
-    [SerializeField] private float oxygenDrain = 5;
-    [SerializeField] private float timeBeforeOxygenStart = 5;
-    [SerializeField] private float oxygenRegenValue = 2;
-    [SerializeField] private float oxygenRegenTime = 0.1f;
-    [SerializeField] private float currentOxygen;
-    private Coroutine regeneratingOxygen;
-
 
     [Header("Headbob Parameters")]
     [SerializeField] private float walkBobSpeed = 14f;
@@ -153,8 +140,6 @@ public class FirstPersonController : MonoBehaviour
     void Update()
     {
         MouseLook();
-        if (useOxygen)
-            HandleOxygen();
         if (canInteract)
         {
             HandleInteractionCheck();
@@ -297,50 +282,6 @@ public class FirstPersonController : MonoBehaviour
             regeneratingStamina = StartCoroutine(RegenStamina());
         }
     }
-
-
-    // ***** PLAYER OXYGEN *****
-
-
-    private void HandleOxygen()
-    {
-
-        if (Input.GetKeyDown(holdBreath))
-        {
-            FindObjectOfType<SoundManager>().Play("BreathIn");
-        }
-
-        if (IsBreathing && currentOxygen != 0)
-        {          
-            if (regeneratingOxygen != null)
-            {                
-                StopCoroutine(regeneratingOxygen);
-                regeneratingOxygen = null;
-            }
-
-            currentOxygen -= oxygenDrain * Time.deltaTime;
-            /*
-            float tempAlpha = damageScreen.color.a;
-            tempAlpha += Mathf.Clamp(Time.deltaTime * fadeSpeed, 0, 0.5f);
-            damageScreen.color = new Color(damageScreen.color.r, damageScreen.color.g, damageScreen.color.b, tempAlpha);
-            durationTimer = 0;
-            */
-
-            CanMove = false;
-
-
-            if (currentOxygen < 0)
-                currentOxygen = 0;
-            if (currentOxygen <= 0)
-                canBreath = false;
-        }
-        if (!IsBreathing && currentOxygen < maxOxygen && regeneratingOxygen == null)
-        {   
-            FindObjectOfType<SoundManager>().Play("BreathOut");
-            regeneratingOxygen = StartCoroutine(RegenOxygen());
-        }
-    }
-
 
     // ***** PLAYER FOOTSTEP SOUNDS *****
 
@@ -489,33 +430,4 @@ public class FirstPersonController : MonoBehaviour
         regeneratingStamina = null;
     }
 
-
-    private IEnumerator RegenOxygen()
-    {
-        yield return new WaitForSeconds(timeBeforeOxygenStart);
-        WaitForSeconds timeToWait = new WaitForSeconds(oxygenRegenTime);
-
-
-        while (currentOxygen < maxOxygen)
-        {
-            if (currentOxygen > 0)
-                canBreath = true;
-
-
-            currentOxygen += oxygenRegenValue;
-
-
-            CanMove = true;
-
-
-            if (currentOxygen > maxOxygen)
-                currentOxygen = maxOxygen;
-
-
-            yield return timeToWait;
-        }
-
-
-        regeneratingOxygen = null;
-    }
 }
